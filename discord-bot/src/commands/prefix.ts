@@ -12,12 +12,12 @@ export default <ICommand>{
 
     let prefix = new Prefix()
     prefix.id = id
-    prefix.prefix = args.join(" ")
+    prefix.prefix = args.join(" ").trim()
 
     await getConnection().manager.save(prefix)
 
-    console.log("prefix :", args[0])
-    msg.channel.send("prefix was changed to " + args[0])
+    console.log("prefix :", prefix.prefix)
+    msg.channel.send("prefix was changed to " + prefix.prefix)
     return true
   },
   usage: "prefix <prefix>",
