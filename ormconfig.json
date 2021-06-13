@@ -1,0 +1,6 @@
+{
+  "type": "sqlite",
+  "database": "db/userdata.db",
+  "entities": ["dist/**/*.js", "src/**/*.ts"],
+  "keepConnectionAlive": true
+}

@@ -1,0 +1,32 @@
+{
+  "description": "부계정이 놀려고 만든 봇",
+  "invitation": "https://discord.com/api/oauth2/authorize?client_id=605955972170776635&permissions=8&scope=bot",
+  "commands": [
+    { "name": "help", "description": "도움말" },
+    {
+      "name": "prefix",
+      "description": "prefix를 변경할 수 있습니다."
+    },
+    {
+      "name": "hi",
+      "description": "hi!",
+      "alias": ["하이", "ㅎㅇ", "hello"]
+    },
+    {
+      "name": "안녕",
+      "description": "안녕!"
+    },
+    {
+      "name": "game",
+      "description": "부계정봇과 게임을 합니다",
+      "alias": ["게임", "놀이"]
+    }
+  ],
+  "games": [
+    {
+      "name": "숫자야구",
+      "description": "말그대로 숫자야구",
+      "alias": ["야구"]
+    }
+  ]
+}
