@@ -36,6 +36,7 @@ export default <IGame>{
         user.isStarted = false
         connection.manager.save(user)
         msg.channel.send("게임을 포기합니다.")
+        msg.channel.send(["정답은", user.number1, user.number2, user.number3, "이었습니다!"].join(" "))
       } else {
         msg.channel.send("게임 중이 아닙니다!")
       }
@@ -64,7 +65,7 @@ export default <IGame>{
           case i:
             ++strike
             break
-          case undefined:
+          case -1:
             ++out
             break
           default:
@@ -75,9 +76,13 @@ export default <IGame>{
       ++user.turn
 
       if (strike == 3) {
-        msg.channel.send("정답을 맞혔습니다! \n 기록 : " + user.turn)
+        msg.channel.send("정답을 맞혔습니다!")
         user.isStarted = false
-        user.best = user.turn
+        if (!user.best) user.best = user.turn
+        if (user.best > user.turn) {
+          msg.channel.send("최고 기록입니다!")
+        }
+        msg.channel.send("기록 : " + user.turn)
       }
       connection.manager.save(user)
 

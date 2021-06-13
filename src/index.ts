@@ -25,8 +25,6 @@ export interface IGame {
   usage?: string
 }
 
-console.log(dev)
-
 const init = async () => {
   process.on("SIGINT", async () => {
     console.log("")

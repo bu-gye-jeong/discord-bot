@@ -12,7 +12,7 @@ export default <ICommand>{
 
     let prefix = new Prefix()
     prefix.id = id
-    prefix.prefix = args[0]
+    prefix.prefix = args.join(" ")
 
     await getConnection().manager.save(prefix)
 
