@@ -25,8 +25,6 @@ export interface IGame {
   usage?: string
 }
 
-console.log(path.join(__dirname, "/events"))
-
 const init = async () => {
   process.on("SIGINT", async () => {
     console.log("")

@@ -1,4 +1,4 @@
-import { getConnection } from "typeorm"
+import { getConnection, SimpleConsoleLogger } from "typeorm"
 import { IGame } from "../index"
 import { Baseball } from "../entity/Baseball"
 
@@ -20,7 +20,10 @@ export default <IGame>{
       if (!user.isStarted) {
         user.isStarted = true
         user.turn = 0
-        const numbers = [...Array(10).keys()].sort(() => 0.5 - Math.random()).slice(0, 3)
+        const numbers = [...Array(10).keys()]
+          .slice(1)
+          .sort(() => 0.5 - Math.random())
+          .slice(0, 3)
         user.number1 = numbers[0]
         user.number2 = numbers[1]
         user.number3 = numbers[2]
@@ -80,6 +83,7 @@ export default <IGame>{
         user.isStarted = false
         if (!user.best) user.best = user.turn
         if (user.best > user.turn) {
+          user.best = user.turn
           msg.channel.send("최고 기록입니다!")
         }
         msg.channel.send("기록 : " + user.turn)
