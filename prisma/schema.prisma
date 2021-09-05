@@ -1,0 +1,32 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model user {
+  id            String @id  
+  permission    Int  
+}
+
+model prefix {
+  id           String @id
+  prefix       String
+}
+
+model baseball {
+  id            String @id
+  isStarted     Boolean
+  number1       Int?
+  number2       Int?
+  number3       Int?
+  turn          Int?
+  best          Int?
+}
+
+
+
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}

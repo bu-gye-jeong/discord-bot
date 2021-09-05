@@ -1,6 +1,5 @@
-discord-bot/config.json
-discord-bot/node_modules
-discord-bot/*.log
-discord-bot/db/
-discord-bot/dist/
-discord-bot/ormconfig.json
+node_modules
+*.log
+dist/
+.env
+examples/
